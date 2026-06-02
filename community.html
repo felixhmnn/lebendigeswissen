@@ -388,10 +388,15 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
   display: grid;
   grid-template-columns: 14px 1fr;
   gap: 12px;
-  align-items: baseline;
+  align-items: start;
   font-family: var(--sans);
   font-size: 15.5px;
   line-height: 1.55;
+}
+.diptych-list li > span:first-child {
+  display: flex;
+  align-items: center;
+  height: 1.55em;
 }
 .diptych-schwere .diptych-list li { color: var(--green-300); }
 .diptych-leicht .diptych-list li { color: #2A352C; }
@@ -399,15 +404,13 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
   width: 10px;
   height: 1px;
   background: #9A9A90;
-  display: inline-block;
-  margin-top: 11px;
+  display: block;
 }
 .diptych-dot {
   width: 7px;
   height: 7px;
   background: var(--accent);
-  display: inline-block;
-  margin-top: 8px;
+  display: block;
 }
 .diptych-bridge {
   display: flex;
@@ -424,7 +427,7 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
 .diptych-bridge-label {
   font-family: var(--sans);
   font-weight: 700;
-  font-size: 11px;
+  font-size: 15px;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   color: var(--accent-deep);
@@ -459,6 +462,10 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
   padding: 30px 30px 32px;
   display: flex;
   flex-direction: column;
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .offer-card:hover { transform: translateY(-5px); box-shadow: 0 18px 40px -22px rgba(31,46,33,0.45); border-color: #CFCDC2; }
 }
 .offer-card-head {
   display: flex;
@@ -671,10 +678,16 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
   display: grid;
   grid-template-columns: 18px 1fr;
   gap: 14px;
-  align-items: baseline;
+  align-items: start;
   font-family: var(--sans);
   font-size: 16.5px;
   line-height: 1.6;
+}
+.forwhom-fit-list li > span:first-child,
+.forwhom-nofit-list li > span:first-child {
+  display: flex;
+  align-items: center;
+  height: 1.6em;
 }
 .forwhom-fit-list li { color: var(--ink); }
 .forwhom-nofit-list li { color: var(--green-300); }
@@ -773,7 +786,7 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
 .faq-inner {
   max-width: 820px;
   margin: 0 auto;
-  padding: 100px 32px;
+  padding: 72px 32px;
 }
 .faq h2 {
   font-family: var(--serif);
@@ -785,7 +798,7 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
   letter-spacing: -0.01em;
 }
 .faq-list {
-  margin-top: 44px;
+  margin-top: 32px;
   border-top: 1px solid var(--paper-line);
 }
 .faq-item {
@@ -798,14 +811,14 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
   width: 100%;
   text-align: left;
   cursor: pointer;
-  padding: 26px 0;
+  padding: 19px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 28px;
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(18px, 2.2vw, 21px);
+  font-size: clamp(16.5px, 2vw, 19px);
   line-height: 1.35;
   color: var(--ink);
   letter-spacing: -0.005em;
@@ -835,16 +848,15 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
   overflow: hidden;
 }
 .faq-answer-content {
-  padding: 2px 0 28px;
+  padding: 0 0 22px;
   max-width: 64ch;
 }
 .faq-answer-content p {
   font-family: var(--sans);
-  font-size: 16px;
-  line-height: 1.72;
+  font-size: 15.5px;
+  line-height: 1.7;
   color: #3C463E;
 }
-.faq-answer-content p + p { margin-top: 12px; }
 
 /* ---- PostScript ---- */
 .ps { background: var(--offwhite); }
@@ -924,12 +936,11 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
       <h1>Dein Kopf hat alles verstanden.<br>Dein Leben hat sich nicht <span class="accent">verändert</span>.</h1>
     </div>
     <div class="reveal" data-delay="120">
-      <p class="hero-sub">Ich kenne das. Jahre Therapie, Bücher, Seminare. Bis mich mein Weg zu den Kogi führte — und zu einer inneren Arbeit, die sich zum ersten Mal wirklich stimmig anfühlte.</p>
+      <p class="hero-sub">Ich kenne das. Jahre Therapie, Bücher, Seminare. Bis mich mein Weg zu dem uralten Wissen indigener Kulturen führte — und zu einer inneren Arbeit, die sich zum ersten Mal wirklich stimmig anfühlte.</p>
     </div>
     <div class="reveal" data-delay="180">
       <div class="hero-ctas">
         <a href="https://community.lebendigeswissen.com/checkout/mitgliedschaft" class="btn btn--lg btn--primary">Ich bin dabei →</a>
-        <a href="#geschichte" class="btn btn--lg btn--ghost-light">Meine Geschichte</a>
       </div>
       <div class="hero-facts">4 Live-Treffen im Monat · 66 € mtl. · sofortiger Beitritt, jederzeit kündbar</div>
     </div>
@@ -943,14 +954,14 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
       <div class="overline">Über Felix</div>
       <h2>Ich bin Felix.</h2>
       <div class="story-text">
-        <p>Ich war Ingenieur. Ich baute technische Lösungen gegen den Klimawandel — und war innerlich getrieben. Ängstlich. Depressiv.</p>
+        <p>Ich war Ingenieur, baute technische Lösungen „gegen" den Klimawandel und war innerlich getrieben. Ängstlich. Depressiv.</p>
         <p>Ich habe alles versucht. Verhaltenstherapie. Psychoanalyse. Gestalt. Coaching. Meditation. Familienstellen. Vieles hat geholfen. Nichts hat mich nachhause gebracht.</p>
-        <p>Dann führte mich mein Weg zu einem Lehrer aus den Anden. Und zum Volk der Kogi. Die ersten Menschen, die nicht führen, wie der Westen führt. Eine innere Arbeit, die sich zum ersten Mal wirklich stimmig anfühlte.</p>
+        <p>Dann führte mich mein Weg zu einem Lehrer aus den Anden und zu dem uralten Wissen der Kogi. Die ersten Menschen, auf die ich traf, die nicht künstlich trennten zwischen ihrem Leben, ihrer Arbeit und der Erde. Eine innere Arbeit, die sich zum ersten Mal wirklich stimmig anfühlte.</p>
         <p class="story-closing">Das hat mein Leben verändert. Nicht in der Theorie. In mir. Das gebe ich hier weiter.</p>
       </div>
     </div>
-    <div class="reveal story-portrait" data-delay="80">
-      <img src="Profilbild.png" alt="Felix — Porträt" loading="lazy">
+    <div class="reveal" data-delay="80" style="aspect-ratio: 1 / 1; max-width: 430px; width: 100%; margin: 0 auto;">
+      <img src="Profilbild.png" alt="Felix — Porträt" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; box-shadow: 0 24px 52px -28px rgba(31,46,33,0.5);">
     </div>
   </div>
 </section>
@@ -959,28 +970,23 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
 <section class="credibility">
   <div class="credibility-inner">
     <div class="reveal">
-      <div class="overline">Geerdet, nicht behauptet</div>
+      <div class="overline">In Zahlen, nicht in Versprechen</div>
     </div>
     <div class="cred-grid">
       <div class="cred-item reveal" data-delay="0">
         <div class="cred-bar"></div>
-        <div class="cred-number">200+</div>
+        <div class="cred-number" data-target="200" data-suffix="+">0</div>
         <div class="cred-label">Menschen direkt begleitet</div>
       </div>
       <div class="cred-item reveal" data-delay="70">
         <div class="cred-bar"></div>
-        <div class="cred-number">10+</div>
+        <div class="cred-number" data-target="10" data-suffix="+">0</div>
         <div class="cred-label">Kohorten abgeschlossen</div>
       </div>
       <div class="cred-item reveal" data-delay="140">
         <div class="cred-bar"></div>
-        <div class="cred-number">2,5</div>
-        <div class="cred-label">Jahre auf diesem Weg — als Lernender und als Begleiter</div>
-      </div>
-      <div class="cred-item reveal" data-delay="210">
-        <div class="cred-bar"></div>
-        <div class="cred-number">23.000</div>
-        <div class="cred-label">Follower auf Instagram</div>
+        <div class="cred-number" data-target="23000" data-suffix="">0</div>
+        <div class="cred-label">Follower auf Social Media</div>
       </div>
     </div>
   </div>
@@ -1051,13 +1057,13 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
           <span>Trennung von unserer authentischen Natur</span>
         </div>
         <ul class="diptych-list">
-          <li><span class="diptych-dash"></span><span>Funktionieren im Überlebensmodus — feststeckende Emotionen (Angst, Wut, Trauer)</span></li>
-          <li><span class="diptych-dash"></span><span>Unbewusst vom Ego, von Verletzungen und Trauma gelenkt</span></li>
-          <li><span class="diptych-dash"></span><span>Orientierung an künstlichen und kolonialen Gedanken</span></li>
-          <li><span class="diptych-dash"></span><span>Selbstunterdrückung (Egorollen und Ideale)</span></li>
-          <li><span class="diptych-dash"></span><span>Leben aus Angst — Rastlosigkeit und Getriebenheit</span></li>
-          <li><span class="diptych-dash"></span><span>Fragmentierung (Symptombekämpfung)</span></li>
-          <li><span class="diptych-dash"></span><span>Über die eigenen Grenzen gehen</span></li>
+          <li><span class="diptych-dash"></span><span>Du funktionierst, aber fühlst kaum noch.</span></li>
+          <li><span class="diptych-dash"></span><span>Alte Wunden steuern dich, ohne dass du es merkst.</span></li>
+          <li><span class="diptych-dash"></span><span>Du lebst nach Regeln, die nie deine waren.</span></li>
+          <li><span class="diptych-dash"></span><span>Du machst dich klein, um zu passen.</span></li>
+          <li><span class="diptych-dash"></span><span>Du bist getrieben und kommst nie zur Ruhe.</span></li>
+          <li><span class="diptych-dash"></span><span>Du bekämpfst Symptome, statt hinzuschauen.</span></li>
+          <li><span class="diptych-dash"></span><span>Du gehst ständig über deine eigenen Grenzen.</span></li>
         </ul>
       </div>
       <div class="diptych-bridge">
@@ -1073,13 +1079,13 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
           <span>Verbindung mit unserer authentischen Natur</span>
         </div>
         <ul class="diptych-list">
-          <li><span class="diptych-dot"></span><span>Fühlen — Emotionen fließen ungehindert (Lebendigkeit)</span></li>
-          <li><span class="diptych-dot"></span><span>Das Ego bewusst selbst lenken</span></li>
-          <li><span class="diptych-dot"></span><span>Orientierung an natürlichen Gedanken</span></li>
-          <li><span class="diptych-dot"></span><span>Selbstausdruck (authentisches Selbst)</span></li>
-          <li><span class="diptych-dot"></span><span>Leben aus Verbindung — Ruhe und Klarheit</span></li>
-          <li><span class="diptych-dot"></span><span>Ganzheit — Gefühle als Botschaften</span></li>
-          <li><span class="diptych-dot"></span><span>Die eigenen Grenzen wahren</span></li>
+          <li><span class="diptych-dot"></span><span>Du fühlst wieder, und bist lebendig.</span></li>
+          <li><span class="diptych-dot"></span><span>Du erkennst deine Muster und entscheidest selbst.</span></li>
+          <li><span class="diptych-dot"></span><span>Du folgst dem, was sich für dich wahr anfühlt.</span></li>
+          <li><span class="diptych-dot"></span><span>Du zeigst dich, wie du wirklich bist.</span></li>
+          <li><span class="diptych-dot"></span><span>Du ruhst in dir und siehst klar.</span></li>
+          <li><span class="diptych-dot"></span><span>Du hörst, was deine Gefühle dir sagen.</span></li>
+          <li><span class="diptych-dot"></span><span>Du wahrst deine Grenzen.</span></li>
         </ul>
       </div>
     </div>
@@ -1101,21 +1107,21 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
         </div>
         <p>Das Leben folgt unsichtbaren Mustern. Kodexe weisen auf diese zeitlosen Muster hin — die hinter Worten liegen. Wir können sie nicht festhalten. Nur zulassen, dass sie uns verändern. Deshalb werden sie mündlich weitergegeben.</p>
       </div>
-      <div class="offer-card reveal" data-delay="60">
+      <div class="offer-card reveal" data-delay="110">
         <div class="offer-card-head">
           <span class="offer-card-num">02</span>
           <h3>Kreise</h3>
         </div>
         <p>Was wir aussprechen, verliert seine Macht über uns. Im Kreis teilen wir, was uns wirklich bewegt — ohne Bewertung, ohne Ratschlag. Und erinnern uns: Wir sind nicht allein mit dem, was wir tragen.</p>
       </div>
-      <div class="offer-card reveal" data-delay="120">
+      <div class="offer-card reveal" data-delay="220">
         <div class="offer-card-head">
           <span class="offer-card-num">03</span>
           <h3>Fragen</h3>
         </div>
         <p>Unsere Fragen bestimmen die Tiefe des Weges. Du bringst mit, was dich gerade nicht loslässt. Manches löst sich schon im Aussprechen. Anderem gebe ich Orientierung aus meiner Erfahrung.</p>
       </div>
-      <div class="offer-card reveal" data-delay="180">
+      <div class="offer-card reveal" data-delay="330">
         <div class="offer-card-head">
           <span class="offer-card-num">04</span>
           <h3>Rituale</h3>
@@ -1134,7 +1140,7 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
   <div class="honesty-inner">
     <div class="reveal">
       <div class="overline">Ehrlich gesagt</div>
-      <h2>Ich bin nicht, wofür der Markt mich verkaufen würde.</h2>
+      <h2>Was ich nicht bin, ist mir so wichtig wie das, was ich bin.</h2>
     </div>
     <div class="honesty-cols">
       <div class="reveal">
@@ -1253,7 +1259,7 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
           <span class="number">66 €</span>
           <span class="period">pro Monat</span>
         </div>
-        <p class="pricing-desc">Vier Live-Treffen im Monat. Sofortiger Beitritt, dann jederzeit kündbar. Ein lebendiger Raum — kein Kurs, den man durchklickt.</p>
+        <p class="pricing-desc">Vier Live-Treffen im Monat. Sofortiger Beitritt, dann jederzeit kündbar. Eine lebendige Gemeinschaft — kein Kurs, den du alleine durchklickst.</p>
         <div style="margin-top: 32px;">
           <a href="https://community.lebendigeswissen.com/checkout/mitgliedschaft" class="btn btn--lg btn--primary">Ich bin dabei →</a>
         </div>
@@ -1290,9 +1296,7 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
           <svg class="faq-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 8 L10 13 L15 8" stroke="#6E7E70" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div class="faq-answer"><div class="faq-answer-inner"><div class="faq-answer-content">
-          <p>Ja, monatlich kündbar, ohne Frist.</p>
-          <p>Ehrlich gesagt: Wer nach einem Monat geht, hat kaum angefangen. Echte Veränderung braucht Zeit und Wiederholung — das gilt hier genauso.</p>
-          <p>Ich empfehle dir, mindestens drei Monate zu bleiben. Dann spürst du selbst, was sich verschoben hat.</p>
+          <p>Ja, monatlich kündbar, ohne Frist. Ehrlich gesagt: Wer nach einem Monat geht, hat kaum angefangen. Echte Veränderung braucht Zeit und Wiederholung — das gilt hier genauso. Ich empfehle dir, mindestens drei Monate zu bleiben. Dann spürst du selbst, was sich verschoben hat.</p>
         </div></div></div>
       </div>
 
@@ -1302,8 +1306,7 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
           <svg class="faq-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 8 L10 13 L15 8" stroke="#6E7E70" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div class="faq-answer"><div class="faq-answer-inner"><div class="faq-answer-content">
-          <p>Nein. Das hier ist kein Kurs, den du kaufst, durchklickst und zurückgibst. Du betrittst einen lebendigen Raum — und das lässt sich nicht rückgängig machen.</p>
-          <p>Was ich dir sagen kann: Wenn du wirklich dabei warst, wirklich mitgemacht hast — und trotzdem das Gefühl hast, dass es dir nichts gegeben hat — dann melde dich bei mir. Ich will dein Geld nicht, wenn das der Fall ist.</p>
+          <p>Nein. Das hier ist kein Kurs, den du kaufst, durchklickst und zurückgibst. Du betrittst einen lebendigen Raum — und das lässt sich nicht rückgängig machen. Was ich dir sagen kann: Wenn du wirklich dabei warst, wirklich mitgemacht hast — und trotzdem das Gefühl hast, dass es dir nichts gegeben hat — dann melde dich bei mir. Ich will dein Geld nicht, wenn das der Fall ist.</p>
         </div></div></div>
       </div>
 
@@ -1313,8 +1316,7 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
           <svg class="faq-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 8 L10 13 L15 8" stroke="#6E7E70" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div class="faq-answer"><div class="faq-answer-inner"><div class="faq-answer-content">
-          <p>Nein. Du kannst jederzeit einsteigen.</p>
-          <p>Die vier monatlichen Formate bauen nicht aufeinander auf — jedes steht für sich. Komm, wenn du bereit bist.</p>
+          <p>Nein. Du kannst jederzeit einsteigen. Die vier monatlichen Formate bauen nicht aufeinander auf — jedes steht für sich. Komm, wenn du bereit bist.</p>
         </div></div></div>
       </div>
 
@@ -1324,9 +1326,7 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
           <svg class="faq-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 8 L10 13 L15 8" stroke="#6E7E70" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div class="faq-answer"><div class="faq-answer-inner"><div class="faq-answer-content">
-          <p>Kodexe, Fragen und Rituale werden aufgezeichnet — die kannst du nachschauen, wann es für dich passt.</p>
-          <p>Die Kreise nicht. Was im Kreis gesprochen wird, bleibt im Kreis.</p>
-          <p>Was zählt, ist nicht, ob du immer dabei bist — sondern ob du dranbleibst.</p>
+          <p>Kodexe, Fragen und Rituale werden aufgezeichnet — die kannst du nachschauen, wann es für dich passt. Die Kreise nicht. Was im Kreis gesprochen wird, bleibt im Kreis. Was zählt, ist nicht, ob du immer dabei bist — sondern ob du dranbleibst.</p>
         </div></div></div>
       </div>
 
@@ -1336,10 +1336,7 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
           <svg class="faq-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 8 L10 13 L15 8" stroke="#6E7E70" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div class="faq-answer"><div class="faq-answer-inner"><div class="faq-answer-content">
-          <p>Nein. Und das sage ich nicht als rechtliche Absicherung, sondern weil es wirklich etwas anderes ist.</p>
-          <p>Wenn ich von Heilung spreche, meine ich nicht das Behandeln von Krankheiten im medizinischen Sinn. Ich meine: die Bedingungen schaffen, in denen sich schwere Energien lösen können, die deine Verbindung zu dir selbst blockieren.</p>
-          <p>Das ersetzt keine medizinische oder psychotherapeutische Begleitung — genauso wenig wie eine schulmedizinische Behandlung die Suche nach der seelischen Ursache ersetzt. Beides hat seinen Platz.</p>
-          <p>Tiefe innere Arbeit kann intensive Prozesse auslösen. Manches fühlt sich zunächst schmerzhaft an. Das ist kein Zeichen, dass etwas falsch läuft — es ist ein natürlicher Teil des Weges. Du trägst dabei immer die volle Verantwortung für dich selbst.</p>
+          <p>Nein. Und das sage ich nicht als rechtliche Absicherung, sondern weil es wirklich etwas anderes ist. Wenn ich von Heilung spreche, meine ich nicht das Behandeln von Krankheiten im medizinischen Sinn. Ich meine: die Bedingungen schaffen, in denen sich schwere Energien lösen können, die deine Verbindung zu dir selbst blockieren. Das ersetzt keine medizinische oder psychotherapeutische Begleitung — genauso wenig wie eine schulmedizinische Behandlung die Suche nach der seelischen Ursache ersetzt. Beides hat seinen Platz. Tiefe innere Arbeit kann intensive Prozesse auslösen. Manches fühlt sich zunächst schmerzhaft an. Das ist kein Zeichen, dass etwas falsch läuft — es ist ein natürlicher Teil des Weges. Du trägst dabei immer die volle Verantwortung für dich selbst.</p>
         </div></div></div>
       </div>
 
@@ -1349,9 +1346,7 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
           <svg class="faq-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 8 L10 13 L15 8" stroke="#6E7E70" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div class="faq-answer"><div class="faq-answer-inner"><div class="faq-answer-content">
-          <p>Nein. Wer bei dem Wort innerlich zusammenzuckt — ich verstehe das.</p>
-          <p>Indigenes Wissen hat nichts mit Räucherstäbchen und Channeling zu tun. Es ist ein Jahrtausende altes, gelebtes Verständnis davon, wie das Leben funktioniert — nah an der Natur, nah an dem, was wirklich ist.</p>
-          <p>Es widerspricht der Wissenschaft nicht. Es geht tiefer.</p>
+          <p>Nein. Wer bei dem Wort innerlich zusammenzuckt — ich verstehe das. Indigenes Wissen hat nichts mit Räucherstäbchen und Channeling zu tun. Es ist ein Jahrtausende altes, gelebtes Verständnis davon, wie das Leben funktioniert — nah an der Natur, nah an dem, was wirklich ist. Es widerspricht der Wissenschaft nicht. Es geht tiefer.</p>
         </div></div></div>
       </div>
 
@@ -1361,8 +1356,7 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
           <svg class="faq-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 8 L10 13 L15 8" stroke="#6E7E70" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div class="faq-answer"><div class="faq-answer-inner"><div class="faq-answer-content">
-          <p>Vier Stunden im Monat für die Live-Treffen. Mehr brauchst du nicht einzuplanen — außer du willst mehr.</p>
-          <p>Das Wissen braucht keine Hausaufgaben. Es braucht Offenheit.</p>
+          <p>Vier Stunden im Monat für die Live-Treffen. Mehr brauchst du nicht einzuplanen — außer du willst mehr. Das Wissen braucht keine Hausaufgaben. Es braucht Offenheit.</p>
         </div></div></div>
       </div>
 
@@ -1372,9 +1366,7 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
           <svg class="faq-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 8 L10 13 L15 8" stroke="#6E7E70" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div class="faq-answer"><div class="faq-answer-inner"><div class="faq-answer-content">
-          <p>Ein Kurs hat ein Ende. Du machst ihn, du bist fertig, das Leben geht weiter wie vorher.</p>
-          <p>Dieser Raum hat kein Ende — weil die Arbeit der Rückverbindung kein Projekt ist, das du abschließt. Sie ist ein Teil deines Lebens, wenn du sie einmal wirklich kennst.</p>
-          <p>Hier lernst du nicht Inhalte. Du veränderst dich — durch Kontinuität, durch Gemeinschaft, durch Praxis.</p>
+          <p>Ein Kurs hat ein Ende. Du machst ihn, du bist fertig, das Leben geht weiter wie vorher. Dieser Raum hat kein Ende — weil die Arbeit der Rückverbindung kein Projekt ist, das du abschließt. Sie ist ein Teil deines Lebens, wenn du sie einmal wirklich kennst. Hier lernst du nicht Inhalte. Du veränderst dich — durch Kontinuität, durch Gemeinschaft, durch Praxis.</p>
         </div></div></div>
       </div>
 
@@ -1384,8 +1376,7 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
           <svg class="faq-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 8 L10 13 L15 8" stroke="#6E7E70" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div class="faq-answer"><div class="faq-answer-inner"><div class="faq-answer-content">
-          <p>Für Menschen, die bereit sind, ehrlich hinzuschauen — auch wenn es unbequem wird. Die spüren, dass da etwas in ihnen ist, das noch nicht gelebt wird. Die nicht nach einer Methode suchen, sondern nach einem echten Weg.</p>
-          <p>Nicht für dich, wenn du jemanden suchst, der dir sagt, was du tun sollst. Nicht, wenn du konsumieren willst, ohne dich einzubringen. Nicht, wenn du glaubst, dass Wachstum angenehm sein muss.</p>
+          <p>Für Menschen, die bereit sind, ehrlich hinzuschauen — auch wenn es unbequem wird. Die spüren, dass da etwas in ihnen ist, das noch nicht gelebt wird. Die nicht nach einer Methode suchen, sondern nach einem echten Weg. Nicht für dich, wenn du jemanden suchst, der dir sagt, was du tun sollst. Nicht, wenn du konsumieren willst, ohne dich einzubringen. Nicht, wenn du glaubst, dass Wachstum angenehm sein muss.</p>
         </div></div></div>
       </div>
 
@@ -1434,10 +1425,44 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
     }, 2500);
   }
 
+  function initCountUp() {
+    document.querySelectorAll('.cred-number[data-target]').forEach(function(el) {
+      var target = parseInt(el.getAttribute('data-target'), 10);
+      var suffix = el.getAttribute('data-suffix') || '';
+      if (reduce) { el.textContent = target.toLocaleString('de-DE') + suffix; return; }
+      var started = false;
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting && !started) {
+            started = true; io.disconnect();
+            var t0 = performance.now();
+            function tick(now) {
+              var p = Math.min(1, (now - t0) / 1400);
+              var eased = 1 - Math.pow(1 - p, 3);
+              el.textContent = Math.round(target * eased).toLocaleString('de-DE') + suffix;
+              if (p < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+          }
+        });
+      }, { threshold: 0.4 });
+      io.observe(el);
+    });
+  }
+
   function initFaq() {
-    document.querySelectorAll('.faq-question').forEach(function(btn) {
+    var allBtns = document.querySelectorAll('.faq-question');
+    allBtns.forEach(function(btn) {
       btn.addEventListener('click', function() {
         var expanded = btn.getAttribute('aria-expanded') === 'true';
+        // Close all others first (single-open)
+        allBtns.forEach(function(other) {
+          if (other !== btn) {
+            other.setAttribute('aria-expanded', 'false');
+            var otherAnswer = other.nextElementSibling;
+            if (otherAnswer) otherAnswer.classList.remove('open');
+          }
+        });
         btn.setAttribute('aria-expanded', String(!expanded));
         var answer = btn.nextElementSibling;
         if (answer) answer.classList.toggle('open', !expanded);
@@ -1446,9 +1471,10 @@ h1, h2, h3, p, ul, blockquote { margin: 0; }
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() { initReveals(); initFaq(); });
+    document.addEventListener('DOMContentLoaded', function() { initReveals(); initCountUp(); initFaq(); });
   } else {
     initReveals();
+    initCountUp();
     initFaq();
   }
 
