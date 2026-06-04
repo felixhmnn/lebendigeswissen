@@ -1,1 +1,16 @@
-/ /community.html 301
+# Lebendiges Wissen — Redirects
+# Clean URLs for all pages
+/trennung          /trennung.html          200
+/indigenes-wissen  /indigenes-wissen.html  200
+/rueckverbindung   /rueckverbindung.html   200
+/ueber-felix       /ueber-felix.html       200
+/ueberfelix        /ueber-felix.html       301
+/community         /community.html         200
+/mentoring         /mentoring.html         200
+/retreats          /retreats.html          200
+/initiation        /retreats.html          301
+/newsletter        /newsletter.html        200
+/faq               /faq.html               200
+/disclaimer        /disclaimer.html        200
+/impressum         /impressum.html         200
+/datenschutz       /datenschutz.html       200
